@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "North Couloir",
+        "grade": "Scramble (class 3)",
+        "trailhead": "Phelps Creek → Leroy Creek Basin",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.8185, 48.1100, 3500],
+          [-120.8180, 48.1170, 4800],
+          [-120.8175, 48.1240, 6000],
+          [-120.8170, 48.1300, 7000],
+          [-120.8165, 48.1370, 7800],
+          [-120.8155, 48.1430, 8600],
+          [-120.8139, 48.1506, 9100]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Beckey Route",
+        "grade": "Rock, Class 5.6",
+        "trailhead": "Blue Lake TH",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.6740, 48.5060, 5200],
+          [-120.6700, 48.5090, 5900],
+          [-120.6660, 48.5115, 6500],
+          [-120.6630, 48.5135, 7000],
+          [-120.6605, 48.5148, 7400],
+          [-120.6590, 48.5152, 7600],
+          [-120.6579, 48.5154, 7720]
+        ]
+      }
+    }
+  ]
+}

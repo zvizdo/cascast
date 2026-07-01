@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Adams Glacier",
+        "kind": "glacier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.5,
+          46.21
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lunch Counter",
+        "kind": "camp"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.485,
+          46.19
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Suksdorf Ridge",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.488,
+          46.188
+        ]
+      }
+    }
+  ]
+}

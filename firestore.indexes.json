@@ -1,0 +1,18 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "projects",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "targetDateEnd", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "weatherSnapshots",
+      "queryScope": "COLLECTION",
+      "fields": [{ "fieldPath": "fetchedAt", "order": "DESCENDING" }]
+    }
+  ],
+  "fieldOverrides": []
+}

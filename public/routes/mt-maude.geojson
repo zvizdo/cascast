@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Northeast Ridge",
+        "grade": "Scramble (class 3)",
+        "trailhead": "Phelps Creek → Leroy Creek Basin",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.8080, 48.0980, 3500],
+          [-120.8075, 48.1050, 4800],
+          [-120.8070, 48.1120, 5900],
+          [-120.8065, 48.1190, 6900],
+          [-120.8060, 48.1250, 7800],
+          [-120.8052, 48.1310, 8600],
+          [-120.8040, 48.1374, 9082]
+        ]
+      }
+    }
+  ]
+}

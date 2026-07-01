@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Noisy Creek South Glacier",
+        "grade": "Glaciated (rope/crampons)",
+        "trailhead": "East Bank Trail → Noisy Creek",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.9580, 48.7380, 1610],
+          [-120.9575, 48.7450, 3200],
+          [-120.9570, 48.7520, 4800],
+          [-120.9565, 48.7580, 6200],
+          [-120.9560, 48.7640, 7200],
+          [-120.9555, 48.7690, 8100],
+          [-120.9562, 48.7728, 9075]
+        ]
+      }
+    }
+  ]
+}

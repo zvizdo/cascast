@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Colchuck Glacier",
+        "grade": "Glaciated",
+        "trailhead": "Stuart Lake TH → Colchuck Lake",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.8420, 47.4500, 5600],
+          [-120.8440, 47.4580, 6300],
+          [-120.8455, 47.4640, 7000],
+          [-120.8462, 47.4690, 7600],
+          [-120.8466, 47.4730, 8100],
+          [-120.8466, 47.4760, 8500],
+          [-120.8465, 47.4783, 8705]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Northeast Couloir",
+        "grade": "Couloir",
+        "trailhead": "Stuart Lake TH",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.8200, 47.4920, 5300],
+          [-120.8280, 47.4890, 6100],
+          [-120.8350, 47.4860, 6900],
+          [-120.8410, 47.4830, 7600],
+          [-120.8445, 47.4810, 8100],
+          [-120.8460, 47.4795, 8500],
+          [-120.8465, 47.4783, 8705]
+        ]
+      }
+    }
+  ]
+}

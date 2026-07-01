@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "West Ridge",
+        "grade": "Scramble (class 3)",
+        "trailhead": "Cascade Pass → Horseshoe Basin",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.0040, 48.4560, 3600],
+          [-121.0030, 48.4640, 4800],
+          [-121.0020, 48.4720, 5900],
+          [-121.0010, 48.4790, 6800],
+          [-121.0000, 48.4850, 7600],
+          [-120.9990, 48.4900, 8400],
+          [-120.9979, 48.4951, 9114]
+        ]
+      }
+    }
+  ]
+}

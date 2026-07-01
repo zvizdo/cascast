@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Eldorado Glacier Route",
+        "grade": "Glaciated (rope/crampons)",
+        "trailhead": "Marble Creek → Eldorado Creek",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.1400, 48.4920, 2100],
+          [-121.1395, 48.5010, 3800],
+          [-121.1380, 48.5100, 5500],
+          [-121.1370, 48.5190, 6800],
+          [-121.1360, 48.5270, 7500],
+          [-121.1352, 48.5330, 8200],
+          [-121.1345, 48.5374, 8873]
+        ]
+      }
+    }
+  ]
+}

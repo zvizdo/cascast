@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Whitewater Glacier",
+        "grade": "Glaciated (rope/crampons)",
+        "trailhead": "Pamelia Lake TH",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.7994, 44.6280, 5400],
+          [-121.7994, 44.6370, 6400],
+          [-121.7994, 44.6460, 7500],
+          [-121.7994, 44.6540, 8400],
+          [-121.7994, 44.6610, 9200],
+          [-121.7994, 44.6670, 9900],
+          [-121.7994, 44.6742, 10495]
+        ]
+      }
+    }
+  ]
+}

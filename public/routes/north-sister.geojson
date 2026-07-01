@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "South Ridge",
+        "grade": "Alpine (loose rock)",
+        "trailhead": "Pole Creek TH",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.7725, 44.1100, 5800],
+          [-121.7725, 44.1190, 7000],
+          [-121.7725, 44.1280, 7900],
+          [-121.7725, 44.1360, 8700],
+          [-121.7725, 44.1440, 9300],
+          [-121.7725, 44.1550, 9800],
+          [-121.7725, 44.1663, 10085]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); if echo \"$FILE\" | grep -qE '(\\.env|\\.env\\.local|\\.env\\.[a-z]+|service.account.*\\.json|credentials.*\\.json)$'; then echo \"BLOCKED: refusing to edit secrets file: $FILE\" >&2; exit 2; fi"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=$(echo \"$CLAUDE_TOOL_INPUT\" | python3 -c \"import sys,json; print(json.load(sys.stdin).get('file_path',''))\" 2>/dev/null); if echo \"$FILE\" | grep -q '\\.py$' && [ -f \"$FILE\" ]; then ruff check --fix --quiet \"$FILE\" 2>/dev/null || true; fi"
+          }
+        ]
+      }
+    ]
+  }
+}

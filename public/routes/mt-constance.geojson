@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "South Chute",
+        "grade": "Scramble (class 3)",
+        "trailhead": "Lake Constance Trailhead",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-123.1320, 47.7360, 1400],
+          [-123.1315, 47.7430, 2600],
+          [-123.1310, 47.7490, 3800],
+          [-123.1305, 47.7550, 4900],
+          [-123.1298, 47.7620, 5900],
+          [-123.1290, 47.7680, 6800],
+          [-123.1274, 47.7728, 7756]
+        ]
+      }
+    }
+  ]
+}

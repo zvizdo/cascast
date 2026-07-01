@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "West Ridge",
+        "grade": "Scramble (class 3)",
+        "trailhead": "Rainy Pass → Wing Lake",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.8220, 48.4860, 4850],
+          [-120.8215, 48.4920, 5700],
+          [-120.8210, 48.4980, 6400],
+          [-120.8205, 48.5040, 7100],
+          [-120.8200, 48.5090, 7700],
+          [-120.8190, 48.5140, 8400],
+          [-120.8161, 48.5236, 8975]
+        ]
+      }
+    }
+  ]
+}

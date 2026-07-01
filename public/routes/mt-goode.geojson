@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Northeast Buttress",
+        "grade": "Alpine rock (low 5th)",
+        "trailhead": "Bridge Creek → Park Creek",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.9080, 48.5200, 2800],
+          [-120.9075, 48.5150, 4000],
+          [-120.9070, 48.5110, 5300],
+          [-120.9068, 48.5070, 6500],
+          [-120.9065, 48.5030, 7400],
+          [-120.9060, 48.4920, 8500],
+          [-120.9109, 48.4829, 9220]
+        ]
+      }
+    }
+  ]
+}

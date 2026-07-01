@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Backbone Ridge via Aasgard Pass",
+        "grade": "Scramble (class 3)",
+        "trailhead": "Stuart Lake → Colchuck Lake",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.8380, 47.4400, 3400],
+          [-120.8375, 47.4460, 4800],
+          [-120.8368, 47.4520, 6200],
+          [-120.8362, 47.4580, 7500],
+          [-120.8358, 47.4640, 8000],
+          [-120.8350, 47.4710, 8500],
+          [-120.8334, 47.4787, 8840]
+        ]
+      }
+    }
+  ]
+}

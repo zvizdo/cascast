@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "South Side (Hogsback)",
+        "grade": "Glaciated",
+        "trailhead": "Timberline Lodge",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.6960, 45.3300, 5960],
+          [-121.6960, 45.3400, 7100],
+          [-121.6959, 45.3490, 8200],
+          [-121.6959, 45.3570, 9200],
+          [-121.6958, 45.3640, 10100],
+          [-121.6958, 45.3700, 10800],
+          [-121.6958, 45.3736, 11249]
+        ]
+      }
+    }
+  ]
+}

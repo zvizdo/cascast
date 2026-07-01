@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hayden Glacier",
+        "grade": "Glaciated scramble",
+        "trailhead": "Pole Creek TH",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.7841, 44.0960, 5800],
+          [-121.7841, 44.1030, 6900],
+          [-121.7841, 44.1110, 7900],
+          [-121.7841, 44.1200, 8700],
+          [-121.7841, 44.1290, 9300],
+          [-121.7841, 44.1390, 9800],
+          [-121.7841, 44.1484, 10047]
+        ]
+      }
+    }
+  ]
+}

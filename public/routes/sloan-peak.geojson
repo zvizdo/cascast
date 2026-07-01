@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Corkscrew Route",
+        "grade": "Glaciated (rope/crampons)",
+        "trailhead": "Bedal Creek",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.3420, 48.0080, 2790],
+          [-121.3415, 48.0160, 3800],
+          [-121.3412, 48.0230, 4900],
+          [-121.3410, 48.0300, 5800],
+          [-121.3408, 48.0360, 6600],
+          [-121.3405, 48.0390, 7300],
+          [-121.3402, 48.0415, 7835]
+        ]
+      }
+    }
+  ]
+}

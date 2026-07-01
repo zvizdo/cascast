@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Gerdine Glacier",
+        "kind": "glacier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.12,
+          48.115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cool Glacier",
+        "kind": "glacier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.105,
+          48.108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Disappointment Peak",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.11,
+          48.109
+        ]
+      }
+    }
+  ]
+}

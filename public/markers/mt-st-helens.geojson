@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Crater Rim",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.19,
+          46.198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Monitor Ridge",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.187,
+          46.178
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Worm Flows",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.18,
+          46.18
+        ]
+      }
+    }
+  ]
+}

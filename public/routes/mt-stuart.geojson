@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Cascadian Couloir",
+        "grade": "Glaciated (rope/crampons)",
+        "trailhead": "Ingalls Creek → Cascadian Couloir",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.9080, 47.4390, 4243],
+          [-120.9070, 47.4440, 5500],
+          [-120.9060, 47.4510, 6500],
+          [-120.9050, 47.4570, 7400],
+          [-120.9045, 47.4630, 8200],
+          [-120.9038, 47.4690, 8900],
+          [-120.9031, 47.4751, 9415]
+        ]
+      }
+    }
+  ]
+}

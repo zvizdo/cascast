@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dome Glacier",
+        "grade": "Glaciated (rope/crampons)",
+        "trailhead": "Downey Creek → Bachelor Creek",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.0340, 48.2600, 1450],
+          [-121.0330, 48.2680, 3200],
+          [-121.0320, 48.2760, 5000],
+          [-121.0310, 48.2840, 6500],
+          [-121.0305, 48.2900, 7500],
+          [-121.0300, 48.2960, 8200],
+          [-121.0295, 48.3034, 8920]
+        ]
+      }
+    }
+  ]
+}

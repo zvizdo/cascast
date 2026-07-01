@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Windy Pass Scramble",
+        "grade": "Scramble",
+        "trailhead": "Eightmile Lake TH → Lake Caroline → Windy Pass",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.8330, 47.5480, 6200],
+          [-120.8375, 47.5510, 6800],
+          [-120.8415, 47.5535, 7300],
+          [-120.8445, 47.5558, 7800],
+          [-120.8462, 47.5573, 8200],
+          [-120.8470, 47.5582, 8450],
+          [-120.8473, 47.5587, 8514]
+        ]
+      }
+    }
+  ]
+}

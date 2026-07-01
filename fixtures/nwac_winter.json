@@ -1,0 +1,25 @@
+{
+  "id": 138000,
+  "product_type": "forecast",
+  "published_time": "2026-01-15T15:30:00+00:00",
+  "expires_time": "2026-01-16T16:00:00+00:00",
+  "forecast_zone": [{ "id": 1648, "name": "West Slopes South" }],
+  "bottom_line": "<p>Heightened avalanche conditions on <strong>specific terrain</strong>. Watch for wind slabs.</p>",
+  "hazard_discussion": "<p>New wind-loaded slabs sit on a weak interface near treeline.</p>",
+  "weather_discussion": "<p>Cold NW flow with light snow continuing into tonight.</p>",
+  "danger": [
+    { "valid_day": "current", "lower": 2, "middle": 3, "upper": 3 },
+    { "valid_day": "tomorrow", "lower": 1, "middle": 2, "upper": 3 }
+  ],
+  "forecast_avalanche_problems": [
+    {
+      "avalanche_problem_id": 5,
+      "name": "Wind Slab",
+      "likelihood": "likely",
+      "size": ["1", "2"],
+      "location": ["north upper", "northeast upper", "east middle"],
+      "discussion": "<p>Recent wind has loaded leeward slopes.</p>",
+      "problem_description": "Wind slabs near and above treeline."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Palmer Glacier",
+        "kind": "glacier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7,
+          45.36
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hogsback",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.696,
+          45.372
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Timberline Lodge",
+        "kind": "camp"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.7113,
+          45.3306
+        ]
+      }
+    }
+  ]
+}

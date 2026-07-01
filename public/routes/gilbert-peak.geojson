@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Conrad Glacier Route",
+        "grade": "Glaciated (rope/crampons)",
+        "trailhead": "Conrad Meadows → South Fork Tieton",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.4130, 46.4530, 3900],
+          [-121.4120, 46.4600, 4800],
+          [-121.4110, 46.4660, 5700],
+          [-121.4102, 46.4720, 6500],
+          [-121.4095, 46.4770, 7200],
+          [-121.4088, 46.4830, 7800],
+          [-121.4079, 46.4881, 8184]
+        ]
+      }
+    }
+  ]
+}

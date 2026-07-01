@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Disappointment Cleaver",
+        "grade": "Glaciated (rope/crampons)",
+        "trailhead": "Paradise → Camp Muir",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.7360, 46.7950, 5420],
+          [-121.7345, 46.8060, 7100],
+          [-121.7335, 46.8200, 8800],
+          [-121.7320, 46.8350, 10080],
+          [-121.7390, 46.8430, 11400],
+          [-121.7470, 46.8470, 12300],
+          [-121.7540, 46.8500, 13300],
+          [-121.7603, 46.8517, 14410]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Emmons–Winthrop Glacier",
+        "grade": "Glaciated",
+        "trailhead": "White River → Camp Schurman",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.7050, 46.9000, 5500],
+          [-121.7120, 46.8920, 7600],
+          [-121.7160, 46.8830, 9200],
+          [-121.7150, 46.8740, 11000],
+          [-121.7260, 46.8660, 12200],
+          [-121.7420, 46.8590, 13200],
+          [-121.7603, 46.8517, 14410]
+        ]
+      }
+    }
+  ]
+}

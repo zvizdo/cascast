@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mary Green Glacier",
+        "grade": "Glaciated (rope/crampons)",
+        "trailhead": "Holden Village → Railroad Creek",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.8720, 48.2000, 3200],
+          [-120.8710, 48.2080, 4500],
+          [-120.8700, 48.2160, 5800],
+          [-120.8688, 48.2230, 7000],
+          [-120.8680, 48.2290, 8000],
+          [-120.8672, 48.2340, 8900],
+          [-120.8664, 48.2382, 9516]
+        ]
+      }
+    }
+  ]
+}

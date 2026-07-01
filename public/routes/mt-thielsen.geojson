@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "West Ridge",
+        "grade": "Scramble (class 2-4)",
+        "trailhead": "Mount Thielsen TH (OR-138)",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-122.0800, 43.1360, 5500],
+          [-122.0790, 43.1390, 6300],
+          [-122.0775, 43.1420, 7100],
+          [-122.0755, 43.1450, 7800],
+          [-122.0730, 43.1475, 8400],
+          [-122.0700, 43.1500, 8900],
+          [-122.0666, 43.1527, 9182]
+        ]
+      }
+    }
+  ]
+}

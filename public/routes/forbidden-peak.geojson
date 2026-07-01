@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "West Ridge",
+        "grade": "Alpine rock (low 5th)",
+        "trailhead": "Boston Basin",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.0640, 48.4720, 3200],
+          [-121.0635, 48.4800, 4500],
+          [-121.0625, 48.4880, 5800],
+          [-121.0615, 48.4960, 6800],
+          [-121.0610, 48.5020, 7600],
+          [-121.0600, 48.5070, 8200],
+          [-121.0579, 48.5115, 8815]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "South Climb",
+        "grade": "Glaciated walk-up",
+        "trailhead": "Cold Springs",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.4920, 46.1520, 5600],
+          [-121.4915, 46.1620, 7000],
+          [-121.4912, 46.1720, 8400],
+          [-121.4910, 46.1810, 9600],
+          [-121.4910, 46.1890, 10700],
+          [-121.4909, 46.1960, 11600],
+          [-121.4909, 46.2024, 12281]
+        ]
+      }
+    }
+  ]
+}

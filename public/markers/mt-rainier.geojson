@@ -1,0 +1,13 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    { "type": "Feature", "properties": { "name": "Camp Muir", "kind": "camp" }, "geometry": { "type": "Point", "coordinates": [-121.7314, 46.8356] } },
+    { "type": "Feature", "properties": { "name": "Camp Schurman", "kind": "camp" }, "geometry": { "type": "Point", "coordinates": [-121.7236, 46.8597] } },
+    { "type": "Feature", "properties": { "name": "Paradise", "kind": "landmark" }, "geometry": { "type": "Point", "coordinates": [-121.7376, 46.7930] } },
+    { "type": "Feature", "properties": { "name": "Emmons Glacier", "kind": "glacier" }, "geometry": { "type": "Point", "coordinates": [-121.7300, 46.8650] } },
+    { "type": "Feature", "properties": { "name": "Nisqually Glacier", "kind": "glacier" }, "geometry": { "type": "Point", "coordinates": [-121.7464, 46.8347] } },
+    { "type": "Feature", "properties": { "name": "Paradise Glacier", "kind": "glacier" }, "geometry": { "type": "Point", "coordinates": [-121.7142, 46.8175] } },
+    { "type": "Feature", "properties": { "name": "Ingram Glacier", "kind": "glacier" }, "geometry": { "type": "Point", "coordinates": [-121.7380, 46.8430] } },
+    { "type": "Feature", "properties": { "name": "Ingram Flats", "kind": "landmark" }, "geometry": { "type": "Point", "coordinates": [-121.7360, 46.8400] } }
+  ]
+}

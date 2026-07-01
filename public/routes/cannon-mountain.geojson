@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "South Ridge",
+        "grade": "Scramble (class 3)",
+        "trailhead": "Enchantments Core Zone",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.8060, 47.4640, 7500],
+          [-120.8055, 47.4680, 7700],
+          [-120.8050, 47.4720, 7900],
+          [-120.8044, 47.4760, 8100],
+          [-120.8038, 47.4800, 8300],
+          [-120.8032, 47.4840, 8500],
+          [-120.8024, 47.5028, 8652]
+        ]
+      }
+    }
+  ]
+}

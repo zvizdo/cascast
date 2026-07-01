@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Trail Crest",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.293,
+          36.564
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "East Buttress",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.29,
+          36.579
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mountaineers Notch",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.287,
+          36.582
+        ]
+      }
+    }
+  ]
+}

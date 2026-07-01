@@ -1,0 +1,61 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Coleman Glacier",
+        "kind": "glacier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.83,
+          48.79
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Easton Glacier",
+        "kind": "glacier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.81,
+          48.765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Roman Wall",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.817,
+          48.779
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sherman Crater",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.808,
+          48.77
+        ]
+      }
+    }
+  ]
+}

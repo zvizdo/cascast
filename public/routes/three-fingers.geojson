@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "South Peak via Goat Flats",
+        "grade": "Scramble (class 3)",
+        "trailhead": "Tupso Pass",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.6890, 48.1330, 3020],
+          [-121.6888, 48.1400, 4000],
+          [-121.6886, 48.1470, 4900],
+          [-121.6884, 48.1540, 5500],
+          [-121.6882, 48.1600, 6000],
+          [-121.6880, 48.1650, 6500],
+          [-121.6878, 48.1699, 6858]
+        ]
+      }
+    }
+  ]
+}

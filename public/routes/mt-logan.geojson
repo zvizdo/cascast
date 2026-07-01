@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "East Ridge",
+        "grade": "Glaciated (rope/crampons)",
+        "trailhead": "Colonial Creek → Thunder Creek",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.9580, 48.4970, 1200],
+          [-120.9570, 48.5050, 3000],
+          [-120.9560, 48.5130, 4800],
+          [-120.9550, 48.5200, 6300],
+          [-120.9545, 48.5260, 7300],
+          [-120.9535, 48.5310, 8200],
+          [-120.9519, 48.5367, 9087]
+        ]
+      }
+    }
+  ]
+}

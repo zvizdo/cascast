@@ -1,0 +1,11 @@
+node_modules
+.next
+.git
+functions
+terraform
+tests
+test-results
+playwright-report
+*.log
+.env.local
+.env

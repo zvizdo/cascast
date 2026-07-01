@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Beckey Route",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.659,
+          48.515
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Liberty Bell Spire",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.657,
+          48.516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Concord Tower",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.66,
+          48.514
+        ]
+      }
+    }
+  ]
+}

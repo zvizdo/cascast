@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Coleman–Deming",
+        "grade": "Glaciated",
+        "trailhead": "Heliotrope Ridge",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.8580, 48.7920, 4300],
+          [-121.8500, 48.7900, 5600],
+          [-121.8420, 48.7870, 6900],
+          [-121.8340, 48.7850, 8100],
+          [-121.8270, 48.7830, 9200],
+          [-121.8210, 48.7800, 10000],
+          [-121.8145, 48.7766, 10781]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Easton Glacier",
+        "grade": "Glaciated",
+        "trailhead": "Schreibers Meadow",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.7900, 48.7340, 3500],
+          [-121.7950, 48.7440, 5000],
+          [-121.7990, 48.7540, 6400],
+          [-121.8020, 48.7620, 7600],
+          [-121.8060, 48.7680, 8700],
+          [-121.8100, 48.7730, 9800],
+          [-121.8145, 48.7766, 10781]
+        ]
+      }
+    }
+  ]
+}

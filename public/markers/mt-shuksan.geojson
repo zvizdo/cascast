@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sulphide Glacier",
+        "kind": "glacier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.6,
+          48.825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Curtis Glacier",
+        "kind": "glacier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.612,
+          48.836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Summit Pyramid",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.6032,
+          48.8315
+        ]
+      }
+    }
+  ]
+}

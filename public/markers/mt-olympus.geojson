@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Blue Glacier",
+        "kind": "glacier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.695,
+          47.81
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Snow Dome",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.705,
+          47.805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hoh Glacier",
+        "kind": "glacier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.725,
+          47.808
+        ]
+      }
+    }
+  ]
+}

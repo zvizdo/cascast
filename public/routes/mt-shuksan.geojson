@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sulphide Glacier",
+        "grade": "Glaciated + summit pyramid",
+        "trailhead": "Shannon Ridge",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.5800, 48.7900, 4700],
+          [-121.5850, 48.8000, 6000],
+          [-121.5900, 48.8100, 7000],
+          [-121.5950, 48.8180, 7900],
+          [-121.5990, 48.8250, 8500],
+          [-121.6020, 48.8290, 8900],
+          [-121.6032, 48.8315, 9131]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Fisher Chimneys",
+        "grade": "Glaciated, exposed",
+        "trailhead": "Lake Ann",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.6360, 48.8540, 4900],
+          [-121.6300, 48.8500, 6000],
+          [-121.6240, 48.8460, 7000],
+          [-121.6180, 48.8420, 7800],
+          [-121.6120, 48.8380, 8400],
+          [-121.6070, 48.8345, 8800],
+          [-121.6032, 48.8315, 9131]
+        ]
+      }
+    }
+  ]
+}

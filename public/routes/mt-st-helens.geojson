@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Monitor Ridge",
+        "grade": "Scramble",
+        "trailhead": "Climbers Bivouac",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-122.1840, 46.1480, 3700],
+          [-122.1870, 46.1580, 4700],
+          [-122.1900, 46.1680, 5700],
+          [-122.1920, 46.1760, 6600],
+          [-122.1935, 46.1830, 7400],
+          [-122.1940, 46.1880, 8000],
+          [-122.1944, 46.1912, 8363]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Worm Flows",
+        "grade": "Winter scramble",
+        "trailhead": "Marble Mountain Sno-Park",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-122.1560, 46.1500, 2700],
+          [-122.1640, 46.1600, 4000],
+          [-122.1720, 46.1700, 5300],
+          [-122.1800, 46.1780, 6400],
+          [-122.1870, 46.1840, 7300],
+          [-122.1920, 46.1885, 8000],
+          [-122.1944, 46.1912, 8363]
+        ]
+      }
+    }
+  ]
+}

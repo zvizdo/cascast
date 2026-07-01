@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Colchuck Glacier",
+        "kind": "glacier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.852,
+          47.475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Colchuck Lake",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.8419,
+          47.4836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Dragontail Peak",
+        "kind": "landmark"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.843,
+          47.473
+        ]
+      }
+    }
+  ]
+}

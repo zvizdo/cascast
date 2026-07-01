@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "South Climber's Trail",
+        "grade": "Strenuous hike",
+        "trailhead": "Devil's Lake TH",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.7692, 44.0570, 5800],
+          [-121.7692, 44.0650, 6800],
+          [-121.7692, 44.0730, 7700],
+          [-121.7692, 44.0810, 8500],
+          [-121.7692, 44.0880, 9200],
+          [-121.7692, 44.0960, 9800],
+          [-121.7692, 44.1034, 10358]
+        ]
+      }
+    }
+  ]
+}

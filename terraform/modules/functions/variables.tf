@@ -1,0 +1,10 @@
+variable "project_id" { type = string }
+variable "region" { type = string }
+variable "source_bucket" { type = string }
+variable "sa_emails" { type = map(string) } # from module.iam.sa_emails
+variable "topic_ids" { type = map(string) } # from module.pubsub.topic_ids (logical -> id)
+variable "dlq_topic_id" { type = string }
+variable "weather_bucket" { type = string }
+variable "satellite_bucket" { type = string }
+variable "topic_paths" { type = map(string) } # logical -> full topic path for env vars
+variable "satellite_sa_email" { type = string }

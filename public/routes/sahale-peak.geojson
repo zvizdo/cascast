@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Sahale Glacier",
+        "grade": "Glaciated (rope/crampons)",
+        "trailhead": "Cascade Pass",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.0440, 48.4560, 3600],
+          [-121.0430, 48.4630, 5000],
+          [-121.0420, 48.4700, 6200],
+          [-121.0415, 48.4770, 7200],
+          [-121.0405, 48.4830, 7800],
+          [-121.0396, 48.4870, 8300],
+          [-121.0390, 48.4912, 8680]
+        ]
+      }
+    }
+  ]
+}

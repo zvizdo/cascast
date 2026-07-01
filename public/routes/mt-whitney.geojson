@@ -1,0 +1,49 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mount Whitney Trail",
+        "grade": "Strenuous hike",
+        "trailhead": "Whitney Portal",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-118.2400, 36.5870, 8360],
+          [-118.2520, 36.5840, 9700],
+          [-118.2640, 36.5820, 10900],
+          [-118.2740, 36.5800, 12000],
+          [-118.2820, 36.5790, 12900],
+          [-118.2880, 36.5786, 13800],
+          [-118.2920, 36.5785, 14505]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mountaineers Route",
+        "grade": "Class 3 / couloir",
+        "trailhead": "Whitney Portal → North Fork",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-118.2520, 36.6080, 8360],
+          [-118.2620, 36.6010, 9900],
+          [-118.2710, 36.5950, 11300],
+          [-118.2790, 36.5890, 12600],
+          [-118.2860, 36.5840, 13600],
+          [-118.2900, 36.5805, 14100],
+          [-118.2920, 36.5785, 14505]
+        ]
+      }
+    }
+  ]
+}

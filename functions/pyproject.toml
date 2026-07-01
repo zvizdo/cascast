@@ -1,0 +1,34 @@
+[tool.pytest.ini_options]
+testpaths = ["."]
+asyncio_mode = "auto"
+markers = [
+    "live: hits real external APIs (deselected by default)",
+    "httpx_mock: pytest-httpx configuration marker",
+]
+addopts = [
+  "--cov=.",
+  "--cov-report=term-missing",
+  "--cov-report=xml:coverage.xml",
+  "--cov-fail-under=90",
+  "-m", "not live",
+  "-v",
+  # tools/ tests use repo-root-rooted imports (from functions.tools import ...)
+  # so they run from the repo root, not this functions/-rooted gate.
+  "--ignore=tools",
+]
+
+[tool.coverage.run]
+source = ["."]
+omit = [
+  "*/tests/*", "*/__init__.py", "conftest.py", "*/requirements*.txt",
+  # Gen2 deploy vendoring (build artifacts; canonical copies live in functions/shared & weather_worker)
+  "*/orchestrator/shared/*", "*/weather_worker/shared/*",
+  "*/nwac_worker/shared/*", "*/snotel_worker/shared/*", "*/satellite_worker/shared/*",
+  "*/weather_worker/weather_worker/*", "*/nwac_worker/nwac_worker/*",
+  "*/snotel_worker/snotel_worker/*", "*/satellite_worker/satellite_worker/*",
+  # terrain bake tools run under their own repo-root-rooted gate
+  "tools/*",
+]
+
+[tool.coverage.report]
+exclude_lines = ["if __name__ == .__main__.:", "pragma: no cover", "raise NotImplementedError"]

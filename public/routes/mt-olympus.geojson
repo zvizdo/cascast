@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Blue Glacier",
+        "grade": "Glaciated, long approach",
+        "trailhead": "Hoh River → Glacier Meadows",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-123.6700, 47.8080, 4200],
+          [-123.6800, 47.8060, 5300],
+          [-123.6900, 47.8050, 6200],
+          [-123.6990, 47.8040, 6900],
+          [-123.7050, 47.8030, 7400],
+          [-123.7090, 47.8020, 7700],
+          [-123.7108, 47.8013, 7980]
+        ]
+      }
+    }
+  ]
+}

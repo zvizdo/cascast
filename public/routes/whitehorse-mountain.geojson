@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Northwest Shoulder",
+        "grade": "Glaciated (rope/crampons)",
+        "trailhead": "Niederprum Trailhead",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-121.6840, 48.1760, 900],
+          [-121.6835, 48.1830, 2200],
+          [-121.6825, 48.1900, 3600],
+          [-121.6820, 48.1960, 4800],
+          [-121.6810, 48.2020, 5700],
+          [-121.6800, 48.2070, 6300],
+          [-121.6782, 48.2115, 6840]
+        ]
+      }
+    }
+  ]
+}

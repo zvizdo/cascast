@@ -1,0 +1,83 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+# auto-generated on every build — Next.js recommends not committing it
+next-env.d.ts
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Test / coverage output
+coverage/
+coverage.xml
+.coverage
+htmlcov/
+test-results/
+playwright-report/
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+# saved plan artifact from `terraform plan -out=PLAN`
+terraform/PLAN
+
+# Environment & secrets — never commit real env/credential files
+.env
+.env.*
+# ...but keep example/template files (e.g. .env.local.example)
+!*.example
+*.pem
+*-key.json
+service-account*.json
+
+# Local scratch notes — contains a CDSE secret; do NOT commit (rotate the secret)
+NOTES.md
+
+# Logs
+*.log
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Claude Code runtime lock (shared .claude/{agents,skills,settings.json} stays tracked)
+.claude/scheduled_tasks.lock
+
+# Cloud Functions Gen2 deploy packaging: shared/ is vendored into each function
+# dir at deploy time (Task 13); weather_worker also gets a weather_worker/ self-package
+# so its `from weather_worker import ...` resolves at runtime. Do not commit the copies.
+functions/orchestrator/shared/
+functions/weather_worker/shared/
+functions/weather_worker/weather_worker/
+functions/nwac_worker/shared/
+functions/nwac_worker/nwac_worker/
+functions/snotel_worker/shared/
+functions/snotel_worker/snotel_worker/
+functions/satellite_worker/shared/
+functions/satellite_worker/satellite_worker/
+# archive_file build output
+terraform/modules/functions/build/
+
+# Playwright MCP visual-verification artifacts
+.playwright-mcp/
+/*.png
+*-screenshot.png
+
+# QA screenshot artifacts
+qa-screenshots/
+
+# Generated peak list for the terrain bake CLI
+functions/tools/peaks.json
+
+# Brainstorming visual companion (local mockups)
+.superpowers/

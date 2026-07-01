@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "East Ridge",
+        "grade": "Scramble (class 3)",
+        "trailhead": "Phelps Creek → Leroy Creek Basin",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-120.8140, 48.1280, 3500],
+          [-120.8135, 48.1340, 4800],
+          [-120.8130, 48.1400, 5900],
+          [-120.8125, 48.1460, 6900],
+          [-120.8120, 48.1510, 7800],
+          [-120.8112, 48.1560, 8600],
+          [-120.8082, 48.1619, 9249]
+        ]
+      }
+    }
+  ]
+}

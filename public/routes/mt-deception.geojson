@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Southeast Ridge",
+        "grade": "Scramble (class 3)",
+        "trailhead": "Upper Dungeness → Royal Lake",
+        "source": "Illustrative; route descriptions + USGS topo",
+        "illustrative": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-123.2380, 47.7740, 2500],
+          [-123.2375, 47.7810, 3500],
+          [-123.2368, 47.7870, 4500],
+          [-123.2360, 47.7930, 5400],
+          [-123.2352, 47.7980, 6200],
+          [-123.2344, 47.8050, 7000],
+          [-123.2335, 47.8131, 7788]
+        ]
+      }
+    }
+  ]
+}
