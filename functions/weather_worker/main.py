@@ -47,7 +47,20 @@ def _refresh_status(series_by_key: dict) -> str:
 def handle_message(cloud_event):
     msg = _decode(cloud_event)
     mountain_id = msg["mountainId"]
+    try:
+        _handle(mountain_id)
+    except omc.OpenMeteoError:
+        raise  # already logged with its errorClass inside _handle
+    except Exception as exc:
+        # Any unexpected exception is a real bug -> actionable + reaches DLQ.
+        obs.log_event(
+            "ERROR", "pipeline_error", source="weather", mountainId=mountain_id,
+            error=str(exc) or repr(exc), errorClass="actionable",
+        )
+        raise
 
+
+def _handle(mountain_id: str) -> None:
     mountain = fc.get_mountain(mountain_id)
     if mountain is None:
         raise ValueError(f"Unknown mountain: {mountain_id}")
@@ -56,15 +69,24 @@ def handle_message(cloud_event):
     try:
         series_by_key = asyncio.run(omc.fetch_forecast(mountain))
     except omc.OpenMeteoError as exc:
+        # Transient (self-heals) vs actionable (bad params) drives the alert.
+        error_class = "transient" if isinstance(
+            exc, (omc.OpenMeteoUnavailable, omc.OpenMeteoThrottled)) else "actionable"
         logging.error("weather fetch failed for mountain %s", mountain_id, exc_info=True)
-        obs.log_event("ERROR", "pipeline_error", source="weather", mountainId=mountain_id, error=str(exc))
+        obs.log_event(
+            "ERROR", "pipeline_error", source="weather", mountainId=mountain_id,
+            error=str(exc) or repr(exc), errorClass=error_class,
+        )
         raise  # let Pub/Sub retry -> DLQ
 
     status = _refresh_status(series_by_key)
     if status == "error":
-        # GFS+ECMWF both missing -> treat as a hard error, write nothing.
+        # GFS+ECMWF both missing -> upstream data gap that self-heals. Transient.
         logging.error("no usable models for mountain %s", mountain_id)
-        obs.log_event("ERROR", "pipeline_error", source="weather", mountainId=mountain_id, error="no usable models")
+        obs.log_event(
+            "ERROR", "pipeline_error", source="weather", mountainId=mountain_id,
+            error="no usable models", errorClass="transient",
+        )
         raise omc.OpenMeteoError(f"No usable models for {mountain_id}")
 
     fetched_at = datetime.now(timezone.utc)

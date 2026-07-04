@@ -488,3 +488,34 @@ def _match(model_substr):
     import re
     return re.compile(r"https://api\.open-meteo\.com/v1/forecast.*"
                       + re.escape(model_substr).replace(",", "%2C") + r".*")
+
+
+@pytest.mark.asyncio
+async def test_primary_timeout_wraps_into_unavailable_with_nonblank_message(monkeypatch):
+    # A raw asyncio.TimeoutError (what asyncio.wait_for raises when Open-Meteo hangs)
+    # must surface as OpenMeteoUnavailable with a NON-BLANK message — reproduces the
+    # 2026-07-03 error="" masking bug.
+    async def _timeout(_client, _mountain, _models):
+        raise asyncio.TimeoutError()
+
+    monkeypatch.setattr(omc, "_get", _timeout)
+    monkeypatch.setattr(omc, "JITTER_SECONDS", 0.0)
+
+    with pytest.raises(omc.OpenMeteoUnavailable) as ei:
+        await omc.fetch_forecast(MOUNTAIN)
+    assert str(ei.value)  # non-blank
+    assert isinstance(ei.value, omc.OpenMeteoError)  # still caught by the worker's handler
+
+
+def test_retuned_defaults_fit_worker_timeout(monkeypatch):
+    # The suite-wide autouse fixture (conftest._fast_open_meteo_io) zeroes
+    # JITTER_SECONDS/RETRY_WAIT_MAX_SECONDS for test speed; undo it here so this
+    # test reads the real unpatched module defaults, not the zeroed test values.
+    monkeypatch.undo()
+    budget = (
+        omc.JITTER_SECONDS
+        + omc.RETRY_MAX_ATTEMPTS * omc.REQUEST_TIMEOUT_SECONDS
+        + (omc.RETRY_MAX_ATTEMPTS - 1) * omc.RETRY_WAIT_MAX_SECONDS
+    )
+    assert budget < 120  # worst-case wall-clock under the weather-worker timeout
+    assert omc.JITTER_SECONDS == 20  # wider herd spread for 39 mountains

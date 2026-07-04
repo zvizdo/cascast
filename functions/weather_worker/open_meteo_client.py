@@ -51,12 +51,12 @@ ALL_HOURLY = HOURLY_VARS + PRESSURE_VARS
 # code changes.
 #
 # Worst-case wall-clock must stay under the 120s worker timeout (Terraform):
-#   JITTER (10) + RETRY_MAX_ATTEMPTS*REQUEST_TIMEOUT (4*20) + (n-1)*RETRY_WAIT (3*8)
-#   = 10 + 80 + 24 = 114s < 120s, even if every attempt stalls to its full timeout.
-JITTER_SECONDS = float(os.environ.get("WEATHER_FETCH_JITTER_SECONDS", "10"))
+#   JITTER (20) + RETRY_MAX_ATTEMPTS*REQUEST_TIMEOUT (4*18) + (n-1)*RETRY_WAIT (3*6)
+#   = 20 + 72 + 18 = 110s < 120s, even if every attempt stalls to its full timeout.
+JITTER_SECONDS = float(os.environ.get("WEATHER_FETCH_JITTER_SECONDS", "20"))
 RETRY_MAX_ATTEMPTS = int(os.environ.get("WEATHER_FETCH_RETRY_ATTEMPTS", "4"))
-RETRY_WAIT_MAX_SECONDS = float(os.environ.get("WEATHER_FETCH_RETRY_WAIT_MAX", "8"))
-REQUEST_TIMEOUT_SECONDS = float(os.environ.get("WEATHER_FETCH_TIMEOUT", "20"))
+RETRY_WAIT_MAX_SECONDS = float(os.environ.get("WEATHER_FETCH_RETRY_WAIT_MAX", "6"))
+REQUEST_TIMEOUT_SECONDS = float(os.environ.get("WEATHER_FETCH_TIMEOUT", "18"))
 
 # Substrings (case-insensitive) in Open-Meteo's {reason} that mark a transient
 # throttle rather than a deterministic bad request.
@@ -70,6 +70,12 @@ class OpenMeteoError(RuntimeError):
 class OpenMeteoThrottled(OpenMeteoError):
     """Transient throttle: HTTP 429, or HTTP 400 'Too many concurrent requests'.
     Safe to retry with backoff — distinct from a deterministic bad-params 400."""
+
+
+class OpenMeteoUnavailable(OpenMeteoError):
+    """Transient upstream failure after retries are exhausted: a connection/read
+    timeout, transport error, or 5xx. Self-heals on the next scheduled run —
+    distinct from a deterministic bad-params OpenMeteoError."""
 
 
 def _params(mountain: dict, models: tuple[str, ...]) -> dict:
@@ -237,7 +243,11 @@ async def fetch_forecast(mountain: dict) -> dict[str, ModelSeries]:
 
     if isinstance(primary, Exception):
         # Both GFS and ECMWF gone is unrecoverable for this fetch -> caller decides.
-        raise primary if isinstance(primary, OpenMeteoError) else OpenMeteoError(str(primary))
+        # A raw timeout/transport error (str() often empty) becomes an explicit,
+        # NON-BLANK OpenMeteoUnavailable so the failure cause is never masked.
+        if isinstance(primary, OpenMeteoError):
+            raise primary
+        raise OpenMeteoUnavailable(str(primary) or repr(primary))
 
     elevations = mountain["elevations"]
     series = parse_models(primary, (GFS, ECMWF), elevations)

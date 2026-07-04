@@ -13,6 +13,19 @@ def _event(payload: dict) -> SimpleNamespace:
     return SimpleNamespace(data={"message": {"data": encoded}})
 
 
+def _find_event(capsys, name):
+    for line in capsys.readouterr().out.splitlines():
+        line = line.strip()
+        if line.startswith("{"):
+            try:
+                o = json.loads(line)
+            except ValueError:
+                continue
+            if o.get("event") == name:
+                return o
+    return None
+
+
 @pytest.fixture
 def snotel_data(load_fixture):
     from snotel_worker import snotel_client
@@ -154,6 +167,19 @@ def test_snotel_emits_error_before_reraise(monkeypatch, capsys):
         main.handle_message(_event({"mountainId": "mt-rainier"}))
     lines = capsys.readouterr().out.splitlines()
     assert any('"event": "pipeline_error"' in l and '"source": "snotel"' in l for l in lines)
+
+
+def test_snotel_pipeline_error_has_errorclass(monkeypatch, capsys):
+    mountain = {"id": "mt-baker", "snotelStationId": "909", "snotelStationTriplet": "909:WA:SNTL"}
+    monkeypatch.setattr(main.fc, "get_mountain", lambda mid: mountain)
+    monkeypatch.setattr(main, "fetch_snotel", MagicMock(side_effect=TimeoutError("read timeout")))
+    monkeypatch.setattr(main, "get_db", lambda: MagicMock())
+
+    with pytest.raises(TimeoutError):
+        main.handle_message(_event({"mountainId": "mt-baker"}))
+
+    evt = _find_event(capsys, "pipeline_error")
+    assert evt["errorClass"] == "transient"
 
 
 def test_fetch_snotel_wraps_async_client(monkeypatch, snotel_data, load_fixture):

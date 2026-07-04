@@ -50,7 +50,8 @@ def handle_message(cloud_event) -> None:
     try:
         data = fetch_snotel(station_id, triplet)
     except Exception as exc:
-        obs.log_event("ERROR", "pipeline_error", source="snotel", mountainId=mountain["id"], error=str(exc))
+        obs.log_event("ERROR", "pipeline_error", source="snotel", mountainId=mountain["id"],
+                      error=str(exc) or repr(exc), errorClass=obs.classify_exception(exc))
         raise
 
     record = data.model_dump(by_alias=True)

@@ -61,7 +61,8 @@ def handle_message(cloud_event) -> None:
     try:
         scene = fetch_scene(bbox)
     except Exception as exc:  # CDSE outage / 401 / transport error
-        obs.log_event("ERROR", "pipeline_error", source="satellite", mountainId=mountain_id, error=f"CDSE lookup failed: {exc}")
+        obs.log_event("ERROR", "pipeline_error", source="satellite", mountainId=mountain_id,
+                      error=f"CDSE lookup failed: {exc}", errorClass=obs.classify_exception(exc))
         scene = None
 
     cache_ref = db.collection("satelliteCache").document(mountain_id)
@@ -75,7 +76,8 @@ def handle_message(cloud_event) -> None:
             write_satellite_image_history(mountain_id, scene["latestImageDate"], jpeg)
             obs.log_event("INFO", "pipeline_image", source="satellite", mountainId=mountain_id, scene=scene["latestImageDate"])
         except Exception as exc:  # Processing API outage / quota / transport
-            obs.log_event("ERROR", "pipeline_error", source="satellite", mountainId=mountain_id, error=f"latest render failed: {exc}")
+            obs.log_event("ERROR", "pipeline_error", source="satellite", mountainId=mountain_id,
+                          error=f"latest render failed: {exc}", errorClass=obs.classify_exception(exc))
 
     # The displayed image is the real Copernicus Sentinel-2 L2A scene (rendered via the
     # CDSE Processing API), so credit Copernicus — NOT the EOX cloudless mosaic. The
@@ -112,7 +114,8 @@ def _backfill_window(db, mountain_id, bbox, base_record, newest_date) -> None:
     try:
         recent = search_recent_scenes(bbox)
     except Exception as exc:
-        obs.log_event("ERROR", "pipeline_error", source="satellite", mountainId=mountain_id, error=f"window search failed: {exc}")
+        obs.log_event("ERROR", "pipeline_error", source="satellite", mountainId=mountain_id,
+                      error=f"window search failed: {exc}", errorClass=obs.classify_exception(exc))
         return
     hist_col = db.collection("satelliteCache").document(mountain_id).collection("history")
     seen, rendered, dropped = set(), 0, []
@@ -140,6 +143,7 @@ def _backfill_window(db, mountain_id, bbox, base_record, newest_date) -> None:
             append_history("satelliteCache", mountain_id, d, rec)
             rendered += 1
         except Exception as exc:
-            obs.log_event("ERROR", "pipeline_error", source="satellite", mountainId=mountain_id, error=f"backfill render {d} failed: {exc}")
+            obs.log_event("ERROR", "pipeline_error", source="satellite", mountainId=mountain_id,
+                          error=f"backfill render {d} failed: {exc}", errorClass=obs.classify_exception(exc))
     if dropped:
         obs.log_event("WARNING", "pipeline_backfill_capped", source="satellite", mountainId=mountain_id, dropped=dropped)

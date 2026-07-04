@@ -2,7 +2,7 @@ import base64
 import json
 from datetime import datetime, timezone
 from types import SimpleNamespace
-from unittest.mock import MagicMock
+from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
@@ -244,6 +244,23 @@ def test_nwac_emits_error_before_reraise(monkeypatch, capsys):
     assert evt["severity"] == "ERROR"
     assert evt["source"] == "nwac"
     assert evt["mountainId"] == "mt-rainier"
+
+
+def test_nwac_pipeline_error_has_errorclass(monkeypatch, capsys):
+    missing = MagicMock(); missing.exists = False
+    forecast_ref = MagicMock(); forecast_ref.get.return_value = missing
+    db = MagicMock()
+    db.collection.return_value.document.return_value = forecast_ref
+
+    monkeypatch.setattr(main, "get_db", lambda: db)
+    monkeypatch.setattr(main.fc, "get_mountain", lambda slug: _mountain())
+    monkeypatch.setattr(main.nwac_client, "fetch_forecast", AsyncMock(side_effect=TimeoutError("read timeout")))
+
+    with pytest.raises(TimeoutError):
+        main.handle_message(_event({"mountainId": "mt-baker"}))
+
+    evt = _find_event(capsys, "pipeline_error")
+    assert evt["errorClass"] == "transient"
 
 
 def test_decode_message_extracts_mountain_id():

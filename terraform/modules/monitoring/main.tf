@@ -52,8 +52,9 @@ resource "google_monitoring_alert_policy" "dlq" {
   notification_channels = local.alert_channels
 }
 
-# Any worker that logs event="pipeline_error" (incl. satellite, which degrades
-# gracefully but now logs ERROR). Rate-limited so an outage doesn't flood the inbox.
+# Any worker that logs event="pipeline_error" with errorClass="actionable" (a real
+# bug / bad-params). Transient upstream failures (errorClass="transient") self-heal
+# and are covered by the *-pipeline-stale absence alerts, so they do NOT page.
 resource "google_monitoring_alert_policy" "pipeline_errors" {
   project      = var.project_id
   display_name = "pipeline-worker-errors"
@@ -61,7 +62,7 @@ resource "google_monitoring_alert_policy" "pipeline_errors" {
   conditions {
     display_name = "worker logged pipeline_error"
     condition_matched_log {
-      filter = "jsonPayload.event=\"pipeline_error\" severity>=ERROR"
+      filter = "jsonPayload.event=\"pipeline_error\" jsonPayload.errorClass=\"actionable\" severity>=ERROR"
     }
   }
   alert_strategy {

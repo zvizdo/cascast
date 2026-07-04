@@ -74,7 +74,8 @@ def handle_message(cloud_event) -> None:
     try:
         forecast = asyncio.run(nwac_client.fetch_forecast(zone_id))
     except Exception as exc:
-        obs.log_event("ERROR", "pipeline_error", source="nwac", mountainId=mountain["id"], error=str(exc))
+        obs.log_event("ERROR", "pipeline_error", source="nwac", mountainId=mountain["id"],
+                      error=str(exc) or repr(exc), errorClass=obs.classify_exception(exc))
         raise  # let Pub/Sub retry -> DLQ
 
     record = forecast.model_dump(by_alias=True)

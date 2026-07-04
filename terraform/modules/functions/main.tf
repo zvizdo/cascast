@@ -18,6 +18,12 @@ locals {
       memory        = "512Mi"
       timeout       = 120
       max_instances = 100
+      env = {
+        WEATHER_FETCH_JITTER_SECONDS = "20"
+        WEATHER_FETCH_TIMEOUT        = "18"
+        WEATHER_FETCH_RETRY_WAIT_MAX = "6"
+        WEATHER_FETCH_RETRY_ATTEMPTS = "4"
+      }
     }
     nwac-worker = {
       entry_point   = "handle_message"
@@ -117,7 +123,7 @@ resource "google_cloudfunctions2_function" "fn" {
     timeout_seconds       = each.value.timeout
     max_instance_count    = each.value.max_instances
     service_account_email = var.sa_emails[each.value.sa_key]
-    environment_variables = local.shared_env
+    environment_variables = merge(local.shared_env, lookup(each.value, "env", {}))
 
     dynamic "secret_environment_variables" {
       for_each = toset(lookup(each.value, "secrets", []))

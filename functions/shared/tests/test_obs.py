@@ -24,3 +24,29 @@ def test_log_event_success_minimal(capsys):
         "source": "snotel",
         "mountainId": "mt-baker",
     }
+
+
+import asyncio
+
+
+def test_classify_exception_timeout_is_transient():
+    assert obs.classify_exception(asyncio.TimeoutError()) == "transient"
+    assert obs.classify_exception(TimeoutError()) == "transient"
+
+
+def test_classify_exception_connection_is_transient():
+    assert obs.classify_exception(ConnectionError("reset")) == "transient"
+
+    class ReadTimeout(Exception):
+        pass
+
+    class ConnectError(Exception):
+        pass
+
+    assert obs.classify_exception(ReadTimeout()) == "transient"   # name marker "timeout"
+    assert obs.classify_exception(ConnectError()) == "transient"   # name marker "connect"
+
+
+def test_classify_exception_other_is_actionable():
+    assert obs.classify_exception(ValueError("bad field")) == "actionable"
+    assert obs.classify_exception(KeyError("missing")) == "actionable"

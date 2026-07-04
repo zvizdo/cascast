@@ -178,3 +178,56 @@ def test_sustained_wind_and_gust_scored_distinctly():
     cs = main._summary_for(blob, "2026-08-02", summit_ft=14410, nwac_danger=None)
     assert cs.tone == "good"
     assert cs.verdict == "Favorable window on the summit"
+
+
+def test_pipeline_error_timeout_is_transient(patched, monkeypatch, capsys):
+    async def _boom(_mountain):
+        raise main.omc.OpenMeteoUnavailable("read timeout")
+    monkeypatch.setattr(main.omc, "fetch_forecast", _boom)
+    with pytest.raises(main.omc.OpenMeteoUnavailable):
+        main.handle_message(_event({"mountainId": "mt-rainier"}))
+    evt = _find_event(capsys, "pipeline_error")
+    assert evt["errorClass"] == "transient"
+    assert evt["error"] == "read timeout"  # non-blank
+
+
+def test_pipeline_error_throttle_is_transient(patched, monkeypatch, capsys):
+    async def _boom(_mountain):
+        raise main.omc.OpenMeteoThrottled("Too many concurrent requests")
+    monkeypatch.setattr(main.omc, "fetch_forecast", _boom)
+    with pytest.raises(main.omc.OpenMeteoThrottled):
+        main.handle_message(_event({"mountainId": "mt-rainier"}))
+    evt = _find_event(capsys, "pipeline_error")
+    assert evt["errorClass"] == "transient"
+
+
+def test_pipeline_error_bad_params_is_actionable(patched, monkeypatch, capsys):
+    async def _boom(_mountain):
+        raise main.omc.OpenMeteoError("Invalid timezone")
+    monkeypatch.setattr(main.omc, "fetch_forecast", _boom)
+    with pytest.raises(main.omc.OpenMeteoError):
+        main.handle_message(_event({"mountainId": "mt-rainier"}))
+    evt = _find_event(capsys, "pipeline_error")
+    assert evt["errorClass"] == "actionable"
+
+
+def test_pipeline_error_no_usable_models_is_transient(patched, monkeypatch, capsys):
+    unavailable = ModelSeries(available=False)
+    monkeypatch.setattr(main.omc, "fetch_forecast", AsyncMock(return_value={
+        "hrrr": unavailable, "gfs": unavailable, "ecmwf": unavailable}))
+    with pytest.raises(main.omc.OpenMeteoError):
+        main.handle_message(_event({"mountainId": "mt-rainier"}))
+    evt = _find_event(capsys, "pipeline_error")
+    assert evt["errorClass"] == "transient"
+    assert evt["error"]  # non-blank
+
+
+def test_unexpected_exception_logs_actionable(patched, monkeypatch, capsys):
+    # Unknown mountain -> ValueError inside _handle -> caught by the actionable catch-all.
+    patched.get_mountain.return_value = None
+    with pytest.raises(ValueError, match="Unknown mountain"):
+        main.handle_message(_event({"mountainId": "nope"}))
+    evt = _find_event(capsys, "pipeline_error")
+    assert evt is not None
+    assert evt["errorClass"] == "actionable"
+    assert evt["error"]  # non-blank

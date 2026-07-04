@@ -13,6 +13,19 @@ def _event(payload: dict) -> SimpleNamespace:
     return SimpleNamespace(data={"message": {"data": encoded}})
 
 
+def _find_event(capsys, name):
+    for line in capsys.readouterr().out.splitlines():
+        line = line.strip()
+        if line.startswith("{"):
+            try:
+                o = json.loads(line)
+            except ValueError:
+                continue
+            if o.get("event") == name:
+                return o
+    return None
+
+
 def _db_with_mountain(existing_cache=None, history_dates=()):
     mountain_doc = MagicMock()
     mountain_doc.exists = True
@@ -385,6 +398,19 @@ def test_backfill_crosses_async_boundary(monkeypatch):
     # The older scene is backfilled via the real asyncio.run boundary (the latest
     # scene's own image-history write at "2026-06-13" is also captured here).
     assert "2026-06-03" in imgs
+
+
+def test_satellite_pipeline_error_has_errorclass(monkeypatch, capsys):
+    # CDSE lookup failure degrades gracefully (no raise) but must still tag errorClass.
+    db, cache_ref = _db_with_mountain(existing_cache=None)
+    monkeypatch.setattr(main, "get_db", lambda: db)
+    monkeypatch.setattr(main, "fetch_scene", MagicMock(side_effect=TimeoutError("read timeout")))
+    monkeypatch.setattr(main, "write_satellite_metadata", lambda mid, rec: "p")
+
+    main.handle_message(_event({"mountainId": "mt-baker"}))  # satellite degrades, no raise
+
+    evt = _find_event(capsys, "pipeline_error")
+    assert evt["errorClass"] == "transient"
 
 
 def test_satellite_emits_pipeline_success(monkeypatch, capsys):
